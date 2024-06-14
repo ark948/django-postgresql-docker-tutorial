@@ -6,6 +6,7 @@
 > docker-compose.yml file
 > .dockerignore file
 > build docker image and run container
+> docker-compose up -d --build
 > switch to postgresql from sqlite
 > add accounts app
 > add custom user model
