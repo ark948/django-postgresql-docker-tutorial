@@ -1,0 +1,6 @@
+asgiref @ file:///C:/Users/Arman/Documents/ch4-bookstore/asgiref-3.8.1-py3-none-any.whl#sha256=3e1e3ecc849832fe52ccf2cb6686b7a55f82bb1d6aee72a58826471390335e47
+Django @ file:///C:/Users/Arman/Documents/ch4-bookstore/Django-4.0.10-py3-none-any.whl#sha256=4496eb4f65071578b703fdc6e6f29302553c7440e3f77baf4cefa4a4e091fc3d
+psycopg2-binary @ file:///C:/Users/Arman/Documents/ch4-bookstore/psycopg2_binary-2.9.9-cp311-cp311-win_amd64.whl#sha256=b76bedd166805480ab069612119ea636f5ab8f8771e640ae103e05a4aae3e417
+sqlparse @ file:///C:/Users/Arman/Documents/ch4-bookstore/sqlparse-0.5.0-py3-none-any.whl#sha256=c204494cd97479d0e39f28c93d46c0b2d5959c7b9ab904762ea6c7af211c8663
+typing_extensions @ file:///C:/Users/Arman/Documents/ch4-bookstore/typing_extensions-4.12.2-py3-none-any.whl#sha256=04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d
+tzdata @ file:///C:/Users/Arman/Documents/ch4-bookstore/tzdata-2024.1-py2.py3-none-any.whl#sha256=9068bc196136463f5245e51efda838afa15aaeca9903f49050dfa2679db4d252

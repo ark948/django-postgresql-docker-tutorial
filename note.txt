@@ -1,0 +1,21 @@
+> new folder
+> new venv
+> new git reop
+> new django project
+> Dockerfile
+> docker-compose.yml file
+> .dockerignore file
+> build docker image and run container
+> switch to postgresql from sqlite
+> add accounts app
+> add custom user model
+> update settings.py installed_apps and AUTH_USER_MODEL
+> make migrations with app name specified
+> docker-compose exec web python manage.py makemigrations accounts
+> migrate
+> create custom forms
+> update admin in accounts
+> create a superuser
+> docker-compose exec web python manage.py createsuperuser
+> admin-admin@email.com-1
+> 
