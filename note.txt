@@ -19,4 +19,42 @@
 > create a superuser
 > docker-compose exec web python manage.py createsuperuser
 > admin-admin@email.com-1
+> adding pages app (to hold homepage and about page)
+> docker-compose exec web python manage.py startapp pages
+> add templates directory
+> update templates config var in settings.py (DIRS)
+> add base and home templates
+> if settings.py is changed, docker must be restarted
+> docker-compose down
+> docker-compose up -d
+> tests were added
+> adding user registration (login, logout, signup)
+> include builtin auth urls in main urls.py
+> add registration folder to templates
+> add login and signup templates to registration templates folder
+> login and logout only require templates
+> signup requires a view and route as well
+> add login and logout redirect urls to settings.py
+> add signup view to accounts/views and a route in accounts/urls
+> add another route to main urls for accounts app urls
+> there will bo two routes with accounts/ in main urls.py file now
+> add signup template to registration templates folder
+> adding static assets
+> create 4 folders (static, inside it js, css, images)
+> add base.css, base.js and .keep to all (.keep to images)
+> add staticfiles_dirs to settings.py
+> add style link to base html
+> add some basic css to test it
+> add load static tag to base and other html tags
+> do the same for js
+> add static_root to settings.py
+> explicitly add staticfiles_storage to settings.py
+> run collectstatic command
+> docker-compose exec web python manage.py collectstatic
+> add bootstrap
+> note: (link to bootstrap files in base will come before our own css and js files)
+> add about page to pages app
+> add django cripsy forms and crispy bootstrap5 and its two config vars
+> add load cripsy form tags to base and other template
+> update forms in templates with |crispy filter
 > 
