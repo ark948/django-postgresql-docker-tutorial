@@ -57,4 +57,55 @@
 > add django cripsy forms and crispy bootstrap5 and its two config vars
 > add load cripsy form tags to base and other template
 > update forms in templates with |crispy filter
-> 
+> adding django-allauth
+> requires three apps to be added to installed_apps
+> django.contrib.sites, allauth and allauth.account
+> also add site_id=1 to settings.py
+> explicitly adding the authentication backend (which django uses by default)
+> django-allauth requires its own authentication backend to be added to settings.py
+> we need to change the default email backend from smtp to console backend
+> add email backend to settings.py
+> add account logout redirect to settings.py
+> run migrate command (no makemigrations)
+> this led to error: django.core.exceptions.ImproperlyConfigured: allauth.account.middleware.AccountMiddleware must be added to settings.MIDDLEWARE
+> i will add it to middlewares, but this may result in further errors
+> (added it to the bottom of middleware config var)
+> trying to run migrate again...
+> docker-compose exec web python manage.py migrate
+> migrate command ran with no errors... (yet to be tested)
+> main urls.py needs to be updated
+> replace built-in auth app with allauth
+> also the url route for accounts app needs to be deleted
+> since we will be using allauth's tempaltes and routes
+> allauth needs tempaltes to exist in tempaltes/account directory
+> so, mkdir tempaltes/account
+> now, copy existing login and signup html files to account directory
+> (mv command can be used here)
+> at this point, accounts/views and urls.py file can be deleted (but i won't)
+> also, the entire registration directory can be deleted
+> (rm -r command can be used here)
+> now base.html needs to be udpated, to use allauth urls
+> in base.html, add account_ prefix to login, logout and signup
+> done, check out the homepage, and the login page
+> allauth provides many configurations, (you should see the remember me box in login page)
+> we can set this to be true, so the user will not need to login again (always remember)
+> add ACCOUNT_SESSION_REMEMBER = True to settings.py
+> this config var can have three values (none, False, True)
+> none (default) will ask the user if they want to be remembered
+> if set true, and refresh the login page, remember me box will be gone
+> to customize the logout page, add a logout.html to tempaltes/account directory
+> test the new logout page
+> now, we are going to customize the signup page to only ask for password once
+> add ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False to settings.py
+> test the signup page by registering a new user
+> testuser1, testuser1@email.com, testpass123
+> upon registeration, an email will be sent to console, to view this:
+> docker-compose logs
+> now to customize the login page, to only ask for email/password instead of...
+> username/email/password
+> four new configs need to be added to settings.py
+> test the signup
+> testuser2@email.com, testpass123
+> allauth will use the part before @ in email as username (check this in admin)
+> (in case of something like, testuser2@email and testuser2@example.com)...
+> allauth will automatically add a small random number to the second user
