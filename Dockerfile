@@ -28,6 +28,11 @@ COPY ./pycparser-2.22-py3-none-any.whl .
 COPY ./cffi-1.16.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl .
 COPY ./cryptography-42.0.8-cp39-abi3-manylinux_2_28_x86_64.whl .
 COPY ./django_allauth-0.57.0-py3-none-any.whl .
+COPY ./python_dotenv-1.0.1-py3-none-any.whl .
+COPY ./packaging-24.1-py3-none-any.whl .
+COPY ./marshmallow-3.21.3-py3-none-any.whl .
+COPY ./environs-11.0.0-py3-none-any.whl .
+COPY ./dj_database_url-2.2.0-py3-none-any.whl .
 RUN pip install typing_extensions-4.12.2-py3-none-any.whl
 RUN pip install asgiref-3.8.1-py3-none-any.whl
 RUN pip install sqlparse-0.5.0-py3-none-any.whl
@@ -50,6 +55,11 @@ RUN pip install pycparser-2.22-py3-none-any.whl
 RUN pip install cffi-1.16.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
 RUN pip install cryptography-42.0.8-cp39-abi3-manylinux_2_28_x86_64.whl
 RUN pip install django_allauth-0.57.0-py3-none-any.whl
+RUN pip install python_dotenv-1.0.1-py3-none-any.whl
+RUN pip install packaging-24.1-py3-none-any.whl
+RUN pip install marshmallow-3.21.3-py3-none-any.whl
+RUN pip install environs-11.0.0-py3-none-any.whl
+RUN pip install dj_database_url-2.2.0-py3-none-any.whl
 RUN pip freeze > requirements.txt
 
 COPY . .

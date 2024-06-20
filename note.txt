@@ -109,3 +109,15 @@
 > allauth will use the part before @ in email as username (check this in admin)
 > (in case of something like, testuser2@email and testuser2@example.com)...
 > allauth will automatically add a small random number to the second user
+> adding environment variables
+> add env to settings.py (top right after imports)
+> environment vars will be added to docker-compose.yml
+> container needs to be restarted for this
+> secret was moved to docker-compose.yml
+> in production environment, we will have a docker-compose-production.yml
+> that must be immediately added to gitignore
+> allowed_hosts updated, and debug set to False
+> debug var updated, restart container
+> databases updated, dj-database-url package needed
+> small problem, heroku itself will create database_url (i just added the one book said)
+> 
