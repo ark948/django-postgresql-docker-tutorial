@@ -120,4 +120,13 @@
 > debug var updated, restart container
 > databases updated, dj-database-url package needed
 > small problem, heroku itself will create database_url (i just added the one book said)
+> configuring email system
+> overriding allauth's built-in templates
+> we will achieve this by creating the same directory in allauth's source code
+> templates/account/email
+> two files were added
+> sites in admin page was edited
+> one config var added to settings.py file
+> Email confirmation page cannot be found. I have no choice but to skip this chapter
+> and come back with my own project and latest version of all packages
 > 
