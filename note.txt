@@ -109,6 +109,7 @@
 > allauth will use the part before @ in email as username (check this in admin)
 > (in case of something like, testuser2@email and testuser2@example.com)...
 > allauth will automatically add a small random number to the second user
+> Chapter 9: Environment Variables
 > adding environment variables
 > add env to settings.py (top right after imports)
 > environment vars will be added to docker-compose.yml
@@ -120,6 +121,7 @@
 > debug var updated, restart container
 > databases updated, dj-database-url package needed
 > small problem, heroku itself will create database_url (i just added the one book said)
+> Chapter 10: Email
 > configuring email system
 > overriding allauth's built-in templates
 > we will achieve this by creating the same directory in allauth's source code
@@ -129,4 +131,18 @@
 > one config var added to settings.py file
 > Email confirmation page cannot be found. I have no choice but to skip this chapter
 > and come back with my own project and latest version of all packages
-> 
+> chapter 11: Books app
+> create a new app called books
+> add it to installed_apps
+> added model
+> time for running migrations (make first) and then migrate
+> update books/amdin.py
+> mistake in naming model (named it Books instead of Book)
+> changed it back to Book
+> ran makemigrations
+> django is able to detect rename, and will ask it model was renamed?
+> entered yes, and ran migrate again
+> migrate command was applied, everything seems ok
+> added a sample book in admin interface
+> modified model display in admin.py 
+> added urls, views and tempalate for books app (simple list view to list books)
