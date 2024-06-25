@@ -1,6 +1,6 @@
 > new folder
 > new venv
-> new git reop
+> new git repo
 > new django project
 > Dockerfile
 > docker-compose.yml file
@@ -162,3 +162,24 @@
 > django refers to anything uploaded by users, as media (not static)
 > to handle this feature, python image processing library (pillow) must be installed
 > using wsl, downloaded pillow (for linux) and installed it offline
+> the difference between static and media is that static can be trusted
+> need to address security concerns of accepting user uploaded content
+> two new media related configs must be added to settings.py
+> MEDIA_ROOT absolute file system path for user uploaded files
+> MEDIA_URL is the url we can use in templates for the files
+> add them both after staticfiles_storage
+> add a new directory called media, and a 'covers' directory within it
+> main urls.py needs to be updated, since media will exist in production environment
+> import settings and static in main urls.py (to server the media files)
+> now books/models.py needs to be updated to store related images
+> in this case the cover for each book
+> we will use ImageField for this (FileField can be used for other file formats)
+> (ImageField only allows image formats)
+> making migrations now will result in error
+> right now, cover field is not nullable, but we already have some book records...
+> in database, django needs something to populate these existing records
+> to fix this, we add a blank=True to cover field
+> blank and null are commonly used together (IMPORTANT)
+> now make migrations books and apply
+> use the admin interface to add a cover to an existing record
+> update template to display it book_detail.html
