@@ -158,4 +158,7 @@
 > update books/admin.py to display reviews
 > add two sample review to a book
 > udpate the template (book_detail.html) to display the reviews
-> 
+> Chapter 13: File/Image Uploads
+> django refers to anything uploaded by users, as media (not static)
+> to handle this feature, python image processing library (pillow) must be installed
+> using wsl, downloaded pillow (for linux) and installed it offline
