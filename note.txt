@@ -146,3 +146,8 @@
 > added a sample book in admin interface
 > modified model display in admin.py 
 > added urls, views and tempalate for books app (simple list view to list books)
+> updatd book model to use uuid instead of simple ids in urls
+> this was to address multiple securty issues
+> by using the ids in urls, hackers will be able to know exactly how many records
+> are there in our database
+> tests were added as well
