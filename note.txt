@@ -151,3 +151,11 @@
 > by using the ids in urls, hackers will be able to know exactly how many records
 > are there in our database
 > tests were added as well
+> Chapter 12: Reviews app
+> adding a review model to books/models.py (later in a dedicated reviews app)
+> NOTE: django's default ForeignKey field is set to one-to-many
+> model was added, makemigrations books, and run migrate
+> update books/admin.py to display reviews
+> add two sample review to a book
+> udpate the template (book_detail.html) to display the reviews
+> 
