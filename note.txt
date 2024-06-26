@@ -203,3 +203,5 @@
 > add it to detail view after login mixin and before detail view mixin (order is important)
 > then add permission_required field to detail view
 > now test with testuser and specialuser to see the difference
+> Groups and UserPassesTestMixin
+> books tests needs to be updated
