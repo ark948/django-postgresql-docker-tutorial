@@ -203,5 +203,18 @@
 > add it to detail view after login mixin and before detail view mixin (order is important)
 > then add permission_required field to detail view
 > now test with testuser and specialuser to see the difference
-> Groups and UserPassesTestMixin
+> Groups and UserPassesTestMixin (left for reader to explore) IMPORTANT
 > books tests needs to be updated
+
+> Chapter 15: Search
+> add a url, view and template for it
+> implementing the filtering logic (there are different methods)
+> Basic filtering or QuerySet
+> this can be done by modifying the queryset of listview (using a manager)
+> e.g. adding contains (case sensitive) or icontains (not case sensitive)
+> for basic filtering, contains, icontains, filter, all, get or exclude will be enough
+> there is aslo QuerySet API
+> another more advanced option is Q Objects
+> they can be used to chain different filters together
+> adding search form to base template (at the end of nav tag)
+> update the queryset of search result list view using Q Objects
