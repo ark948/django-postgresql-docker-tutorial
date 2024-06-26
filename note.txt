@@ -183,3 +183,23 @@
 > now make migrations books and apply
 > use the admin interface to add a cover to an existing record
 > update template to display it book_detail.html
+> Chapter 14: Permissions
+> protecting book views with login
+> login mixins come before generic views in inheritance
+> not all mixins and generic views can be used together
+> edit books/views.py
+> import LoginRequiredMixin and add them to book list view and detail view
+> create a user called special (by admin interface)
+> added a custom permission (to book model) called special_status
+> so authors can read all books
+> make new migration and run
+> now we will add this custom permission to special user
+> navigate to users section in admin panel, find the special user
+> bottom of the page, use the permissions section to find the special status permission
+> find books | book | Can read all book (found a typo here, book should be books)
+> select it, and add to the right pane, save
+> last step is to apply the custom permission
+> in books/views.py, first import PermissionRequiredMixin
+> add it to detail view after login mixin and before detail view mixin (order is important)
+> then add permission_required field to detail view
+> now test with testuser and specialuser to see the difference
