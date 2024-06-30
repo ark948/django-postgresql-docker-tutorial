@@ -218,3 +218,14 @@
 > they can be used to chain different filters together
 > adding search form to base template (at the end of nav tag)
 > update the queryset of search result list view using Q Objects
+
+> Chapter 16: Performance
+> download and install djang-debug-toolbar
+> 3 configs must be added
+> first add debug toolbar to installed_apps
+> second, add it to middlewares
+> third, we need to add the INTERNAL_IPS
+> since we are using docker, this config requires additional steps
+> add the sockerio code at the bottom of the settings.py file
+> main urls also needs to be updated (debug toolbar must obly appear if debug is true)
+> navigate to home page, toolbar should appear

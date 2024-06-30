@@ -34,6 +34,7 @@ COPY ./marshmallow-3.21.3-py3-none-any.whl .
 COPY ./environs-11.0.0-py3-none-any.whl .
 COPY ./dj_database_url-2.2.0-py3-none-any.whl .
 COPY ./Pillow-9.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl .
+COPY ./django_debug_toolbar-3.4.0-py3-none-any.whl .
 RUN pip install typing_extensions-4.12.2-py3-none-any.whl
 RUN pip install asgiref-3.8.1-py3-none-any.whl
 RUN pip install sqlparse-0.5.0-py3-none-any.whl
@@ -62,6 +63,7 @@ RUN pip install marshmallow-3.21.3-py3-none-any.whl
 RUN pip install environs-11.0.0-py3-none-any.whl
 RUN pip install dj_database_url-2.2.0-py3-none-any.whl
 RUN pip install Pillow-9.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+RUN pip install django_debug_toolbar-3.4.0-py3-none-any.whl
 RUN pip freeze > requirements.txt
 
 COPY . .
