@@ -241,4 +241,8 @@
 > pros.reviews.all()
 > update the book detail view to use prefetch_related
 > by doing so, system will not make a separate query for each review
-> 
+> indexing is another method for improving performance
+> indexing creates a separate data structure for a column (typically ids)
+> downside is that indexes require additional space
+> update the book model to add an index
+> create migration and apply it
