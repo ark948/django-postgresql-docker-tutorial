@@ -246,3 +246,12 @@
 > downside is that indexes require additional space
 > update the book model to add an index
 > create migration and apply it
+> next method, is caching
+> django has its own caching system that gives us four different options
+> the per-site cache, per-view cache, template fragment caching, low-level cache api
+> per-site caching (caches the entire site) is the simplest approach
+> to add per-site caching, add two middlewares to middleware config var (one at the beginning, one at bottom)
+> and three new config vars
+> the cache_middleware_seconds could be changed for more heavier websites with content rapidly changing
+> for more advanced approach, a dedicated caching server is required such as Redis and Memcached
+> test if project works fine (restart server)
