@@ -229,3 +229,16 @@
 > add the sockerio code at the bottom of the settings.py file
 > main urls also needs to be updated (debug toolbar must obly appear if debug is true)
 > navigate to home page, toolbar should appear
+> one important (and first) step of imporving performance is reducing database queries IMPORTANT
+> Django ORM has two methods to help us with that
+> select_related and prefetch_related
+> having one complex query is better than having multiple small ones
+> to examine the querysets we can use python shell (this process is important for professional developers)
+> docker-compose exec web python manage.py shell
+> to access a book instance, we can't use id (since we are using UUIDs)
+> instead use contains
+> pros = Book.objects.get(title__contains="Professionals")
+> pros.reviews.all()
+> update the book detail view to use prefetch_related
+> by doing so, system will not make a separate query for each review
+> 
