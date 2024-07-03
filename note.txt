@@ -255,3 +255,12 @@
 > the cache_middleware_seconds could be changed for more heavier websites with content rapidly changing
 > for more advanced approach, a dedicated caching server is required such as Redis and Memcached
 > test if project works fine (restart server)
+> another step is front-end assets
+> css and js files can become large, django-compressor package can be used to minimize them
+> media files should be used with CDN, and thumbnails also can be used
+
+> Chapter 17: Security
+> Django 4.2 LTS is supported until April 2026
+> there is a command to check if a django project is production ready, provided by system check framework of django
+> docker-compose exec web python manage.py check --deploy
+> 
