@@ -317,3 +317,16 @@
 > also add them to docker-compose.yml
 > restart containers (prod format) and run deployment checklist again
 > should be only 2 left
+> cookies are used to store information on client's computer
+> http is stateless by design, no way to tell if user is authenticatd other than including an idnetifier in header
+> django uses sessions and cookies for this
+> cookies should also be forced over https with session cookie secure config var
+> by default, it is false for local dev, should be true for prod
+> same is true for csrf_cookie_secure
+> add the two to the bottom of the settings.py file
+> udpate docker-compose.yml
+> restart containers
+$ docker-compose down
+$ docker-compose -f docker-compose-prod.yml up -d
+$ docker-compose exec web python manage.py check --deploy
+> there should be no issues
