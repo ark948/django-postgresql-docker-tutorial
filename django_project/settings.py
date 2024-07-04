@@ -73,6 +73,8 @@ MIDDLEWARE = [
     "django.middleware.cache.FetchFromCacheMiddleware",
 ]
 
+SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
+
 CACHE_MIDDLEWARE_ALIAS = "default"
 CACHE_MIDDLEWARE_SECONDS = 604800 # one week
 CACHE_MIDDLEWARE_KEY_PREFIX = ""

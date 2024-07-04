@@ -263,4 +263,52 @@
 > Django 4.2 LTS is supported until April 2026
 > there is a command to check if a django project is production ready, provided by system check framework of django
 > docker-compose exec web python manage.py check --deploy
-> 
+> add docker-compose-prod.yml and immediately add it to gitginore file
+> this file will be production specific docker-compose file
+> copy the content of docker-compose.yml into it
+> bring containers down: cmd> docker-compose down
+> bring them back up using the production specific docker compose file:
+> cmd> docker-compose -f docker-compose-prod.yml up -d
+> in docker-compose-prod.yml:
+> change DJANGO_DEBUG to False
+> restart the container (using prod format)
+> visit a non-existent page, you should see a generic 404 not found error page, nothing more
+> run django deployment checklist command again, there should 1 less issue now (now 5)
+> add a default value to DEBUG in settings.py:
+> DEBUG = env.bool("DJANGO_DEBUG", default=False)
+> it's good practice to always default to the safest scenario
+> now remove the DJANGO_DEBUG from docker compose prod file (no longer need it since we add default)
+> restart the container (prod format)
+> another issue is the secret key
+> generate a safe key using the following command:
+> docker-compose exec web python -c "import secrets; print(secrets.token_urlsafe(38))"
+> (if the generated key contains a '$' dollar sign, add an additional dollar sign to it, because of docker)
+> copy the generated key and replace it with the current value of DJANGO_SECRET_KEY
+> restart container (prod format)
+> run deployment checklist again
+> should be 4 issues now
+> common web security stuff:
+> SQL incjection: Django ORM sanitizes user inputs, but also provides option for raw queries, use extreme caution
+> XSS (Cross site scripting): Django templates automatically escapes specific characters
+> if autoescape off option is required, use extreme caution
+> CSRF or Cross site request forgery: Django CSRF middleware add csrf protection, allows for customization
+> extreme caution
+> Clickjacking: Django Clickjacking middleware offers protection, use caution
+> HTTPS/SSL
+> all modern websites should use ssl
+> http (which is the backbone of the modern web) has no encryption by default
+> SSL, and its successor TLS add encryption to HTTP, making it HTTPS
+> add DJANGO_SECURE_SSL_REDIRECT to settings.py
+> in production this has to be true, in development its ok for it to be false
+> add "DJANGO_SECURE_SSL_REDIRECT=False" to docker-compose.yml (yes the older docker-compose one)
+> this will make it so, that if prod compose file is not present, it will default to True (which is secure)
+> run deployment checklist
+> there should be 3 issues
+> now if you start the server and visit the home page, there will be an error
+> django dev server only supports http not https
+> companies usually have three different environment set up, one for local, one for production...
+> and one for staging server that mimics production but allows for more actual testing
+> the staging server is often deployed but with a hidden url, so only the developer team can try it out
+> going forwared if want to test the local project with prod settings, django secure ssl redirect must be off
+> restart container (old format)
+> browsers often cache ssl, so you might have to clear it
