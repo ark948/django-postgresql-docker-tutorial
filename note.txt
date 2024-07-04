@@ -330,3 +330,7 @@ $ docker-compose down
 $ docker-compose -f docker-compose-prod.yml up -d
 $ docker-compose exec web python manage.py check --deploy
 > there should be no issues
+> another step to secure the project is Admin Hardening
+> the default admin url is just localhost/admin, which is dangerous
+> changing this address to literally anything else makes it more secure
+> open up main urls.py file and change it to something else
