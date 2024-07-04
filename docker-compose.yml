@@ -14,6 +14,9 @@ services:
       - "DJANGO_SECRET_KEY=django-insecure-krm=rchwgx@h%sxq6tj&8q3e!k1a$$_@8q@5s!6m+cv7%8^sdg&"
       - "DJANGO_DEBUG=True"
       - "DJANGO_SECURE_SSL_REDIRECT=False"
+      - "DJANGO_SECURE_HSTS_SECONDS=0"
+      - "DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS=False"
+      - "DJANGO_SECURE_HSTS_PRELOAD=False"
   db:
     image: postgres:13
     volumes:

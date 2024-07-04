@@ -312,3 +312,8 @@
 > going forwared if want to test the local project with prod settings, django secure ssl redirect must be off
 > restart container (old format)
 > browsers often cache ssl, so you might have to clear it
+> HTTP strict transport security (HSTS): basically enforce web browsers to only interact with https
+> three configs vars: in settings.py, all of them begin with secure_hsts
+> also add them to docker-compose.yml
+> restart containers (prod format) and run deployment checklist again
+> should be only 2 left
